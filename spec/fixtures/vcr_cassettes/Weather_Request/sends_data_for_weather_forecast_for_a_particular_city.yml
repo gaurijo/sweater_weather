@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&location=%7B:params=%3Enil%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Sat, 24 Sep 2022 21:02:07 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '7423'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Sat, 24 Sep 2022 21:02:07 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Set-Cookie:
+      - JSESSIONID=85380DA3314E51DD95CB25912555FC9A; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2022 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"{:params=>nil}"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Banihal","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Jammu
+        & Kashmir","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/17578","unknownInput":"","type":"s","latLng":{"lat":33.34986,"lng":75.26968},"displayLatLng":{"lat":33.34986,"lng":75.26968},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=33.34986,75.26968|marker-sm-50318A-1&scalebar=true&zoom=12&rand=674497684"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Biswanath","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Assam","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/8791","unknownInput":"","type":"s","latLng":{"lat":26.79789,"lng":93.30183},"displayLatLng":{"lat":26.79789,"lng":93.30183},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=26.79789,93.30183|marker-sm-50318A-2&scalebar=true&zoom=12&rand=-1745823869"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Dhar\u012B","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Uttarakhand","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/42039","unknownInput":"","type":"s","latLng":{"lat":29.44831,"lng":79.72463},"displayLatLng":{"lat":29.44831,"lng":79.72463},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=29.44831,79.72463|marker-sm-50318A-3&scalebar=true&zoom=12&rand=2010193039"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Lakhana\u016B","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Uttar
+        Pradesh","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/81849","unknownInput":"","type":"s","latLng":{"lat":26.81052,"lng":80.94576},"displayLatLng":{"lat":26.81052,"lng":80.94576},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=26.81052,80.94576|marker-sm-50318A-4&scalebar=true&zoom=12&rand=453651389"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Lakhana\u016B","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Uttar
+        Pradesh","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/264316","unknownInput":"","type":"s","latLng":{"lat":26.78874,"lng":80.97037},"displayLatLng":{"lat":26.78874,"lng":80.97037},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=26.78874,80.97037|marker-sm-50318A-5&scalebar=true&zoom=12&rand=343486908"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Nai
+        Dilli","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Dill\u012B","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/283104","unknownInput":"","type":"s","latLng":{"lat":28.65736,"lng":77.22586},"displayLatLng":{"lat":28.65736,"lng":77.22586},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=28.65736,77.22586|marker-sm-50318A-6&scalebar=true&zoom=12&rand=-1070599345"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Katav-Ivanovsk","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Ural''skiy
+        Federal''nyy Okrug","adminArea3Type":"State","adminArea1":"RU","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"RU/GEO/p0/50230","unknownInput":"","type":"s","latLng":{"lat":54.63499,"lng":58.11686},"displayLatLng":{"lat":54.63499,"lng":58.11686},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=54.63499,58.11686|marker-sm-50318A-7&scalebar=true&zoom=12&rand=-1395734507"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Proletariy","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Severo-Zapadnyy
+        Federal''nyy Okrug","adminArea3Type":"State","adminArea1":"RU","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"RU/GEO/p0/133711","unknownInput":"","type":"s","latLng":{"lat":58.35432,"lng":31.72121},"displayLatLng":{"lat":58.35432,"lng":31.72121},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=58.35432,31.72121|marker-sm-50318A-8&scalebar=true&zoom=12&rand=285142201"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"S\u016Brat","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Gujaraat","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/55840","unknownInput":"","type":"s","latLng":{"lat":21.26065,"lng":72.85032},"displayLatLng":{"lat":21.26065,"lng":72.85032},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=21.26065,72.85032|marker-sm-50318A-9&scalebar=true&zoom=12&rand=-2065713109"},{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Por\u1E6D
+        Bleyar Tahs\u012Bl","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"Andamaan
+        aur Nikobaar dviipsamooh","adminArea3Type":"State","adminArea1":"IN","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"IN/GEO/p0/59198","unknownInput":"","type":"s","latLng":{"lat":11.82167,"lng":93.03783},"displayLatLng":{"lat":11.82167,"lng":93.03783},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=nvLUbIFu2RkiaUD6GCa3iu3Ced4G4Yei&type=map&size=225,160&locations=11.82167,93.03783|marker-sm-50318A-10&scalebar=true&zoom=12&rand=540111354"}]}]}'
+  recorded_at: Sat, 24 Sep 2022 21:02:07 GMT
+recorded_with: VCR 6.1.0
