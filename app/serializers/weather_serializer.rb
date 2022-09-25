@@ -14,7 +14,9 @@ class WeatherSerializer
     "attributes": {
       "current_weather": {
         "datetime": @weather.datetime,
-        "temp": @weather.sunrise,
+        "sunrise": @weather.sunrise,
+        "sunset": @weather.sunset,
+        "temp": @weather.temperature,
         "feels_like": @weather.feels_like,
         "humidity": @weather.humidity,
         "uvi": @weather.uvi,
