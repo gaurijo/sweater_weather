@@ -3,19 +3,29 @@ require 'rails_helper'
 RSpec.describe Weather do 
   it "exists and has attributes" do 
 
-    weather = WeatherFacade.get_weather(39.73, -104.98)
-    weather_poros = Weather.new(weather)
+    data = 
+        {
+          :dt=>1664080279,
+          :sunrise=>1664023766,
+          :sunset=>1664067263,
+          :temp=>60.96,
+          :feels_like=>58.41,
+          :pressure=>1026,
+          :humidity=>35,
+          :dew_point=>33.15,
+          :uvi=>0,
+          :visibility=>10000,
+          :weather=>[{
+            :description=>"clear sky", 
+            :icon=>"01n"
+          }]
+        }
 
-    expect(weather_poros).to be_a(Weather)
-    expect(weather_poros.id).to eq(nil)
-    expect(weather_poros.temperature).to be_a(Float)
-    expect(weather_poros.datetime).to be_a(Time)
-    expect(weather_poros.sunrise).to be_a(Time)
-    expect(weather_poros.sunset).to be_a(Time)
-    expect(weather_poros.feels_like).to be_a(Float)
-    expect(weather_poros.humidity).to be_a(Integer)
-    expect(weather_poros.uvi).to be_a(Float)
-    expect(weather_poros.conditions).to be_a(String)
-    expect(weather_poros.icon).to be_a(String)
+    weather = Weather.new(data)
+
+  expect(weather).to be_a(Weather)
+  expect(weather.datetime).to eq("2022-09-24 21:31:19.000000000 -0700")
+  expect(weather.sunrise).to eq("2022-09-24 05:49:26.000000000 -0700")
+  expect(weather.sunset).to eq("2022-09-24 17:54:23.000000000 -0700") #refactor these later for more readability
   end
 end

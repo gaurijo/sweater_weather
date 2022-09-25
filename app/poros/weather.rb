@@ -1,8 +1,5 @@
 class Weather
-  attr_reader :id,
-              :daily_weather,
-              :hourly_weather,
-              :datetime,
+  attr_reader :datetime,
               :sunrise,
               :sunset,
               :temperature,
@@ -14,16 +11,15 @@ class Weather
               :icon 
 
   def initialize(data)
-    @id = nil 
-    @datetime = Time.at(data[:current][:dt])
-    @sunrise = Time.at(data[:current][:sunrise])
-    @sunset = Time.at(data[:current][:sunset])
-    @temperature = data[:current][:temp]
-    @feels_like = data[:current][:feels_like]
-    @humidity = data[:current][:humidity]
-    @uvi = data[:current][:uvi]
-    @visibility = data[:current][:visibility]
-    @conditions = data[:current][:weather].first[:description]
-    @icon = data[:current][:weather].first[:icon]
+    @datetime = Time.at(data[:dt])
+    @sunrise = Time.at(data[:sunrise])
+    @sunset = Time.at(data[:sunset])
+    @temperature = data[:temp]
+    @feels_like = data[:feels_like]
+    @humidity = data[:humidity]
+    @uvi = data[:uvi]
+    @visibility = data[:visibility]
+    @conditions = data[:weather].first[:description]
+    @icon = data[:weather].first[:icon]
   end
 end
