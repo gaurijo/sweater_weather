@@ -9,6 +9,7 @@ RSpec.describe "Weather Request" do
       expect(response).to be_successful
       
       result = JSON.parse(response.body, symbolize_names: true)[:data]
+      # require 'pry'; binding.pry 
       expect(result).to have_key(:id)
       expect(result[:id]).to eq(nil)
       expect(result[:type]).to eq("forecast")
@@ -33,6 +34,12 @@ RSpec.describe "Weather Request" do
       expect(result[:attributes][:daily_weather][0]).to have_key(:min_temp)
       expect(result[:attributes][:daily_weather][0]).to have_key(:conditions)
       expect(result[:attributes][:daily_weather][0]).to have_key(:icon)
+      expect(result[:attributes]).to have_key(:hourly_weather)
+      expect(result[:attributes][:hourly_weather]).to be_a(Array)
+      expect(result[:attributes][:hourly_weather][0]).to have_key(:time)
+      expect(result[:attributes][:hourly_weather][0]).to have_key(:temp)
+      expect(result[:attributes][:hourly_weather][0]).to have_key(:conditions)
+      expect(result[:attributes][:hourly_weather][0]).to have_key(:icon)
     end 
   end
 
@@ -57,6 +64,12 @@ RSpec.describe "Weather Request" do
       expect(result[:attributes][:daily_weather][0]).to_not have_key(:uvi)
       expect(result[:attributes][:daily_weather][0]).to_not have_key(:clouds)
       expect(result[:attributes][:daily_weather][0]).to_not have_key(:dew_point)
+      expect(result[:attributes][:hourly_weather][0]).to_not have_key(:dew_point)
+      expect(result[:attributes][:hourly_weather][0]).to_not have_key(:feels_like)
+      expect(result[:attributes][:hourly_weather][0]).to_not have_key(:pressure)
+      expect(result[:attributes][:hourly_weather][0]).to_not have_key(:humidity)
+      expect(result[:attributes][:hourly_weather][0]).to_not have_key(:visibility)
+      expect(result[:attributes][:hourly_weather][0]).to_not have_key(:wind_speed)
     end
   end
 end
