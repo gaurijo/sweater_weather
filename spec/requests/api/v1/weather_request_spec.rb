@@ -6,14 +6,8 @@ RSpec.describe "Weather Request" do
     get "/api/v1/forecast?location=denver,co"
     
     expect(response).to be_successful
-
-    result = JSON.parse(response.body, symbolize_names: true)[:data]
-    expect(result).to be_a(Hash)
-    expect(result).to have_key(:attributes)
-    expect(result[:attributes]).to have_key(:id)
-    expect(result[:attributes]).to have_key(:type)
-    expect(result[:attributes]).to have_key(:current_weather)
-
-    current_weather = result[:attributes][:current_weather]
+    result = JSON.parse(response.body, symbolize_names: true)
+    expect(result).to have_key(:data)
+    expect(result[:data]).to have_key(:id)
   end
 end
