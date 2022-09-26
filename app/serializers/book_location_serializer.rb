@@ -9,8 +9,8 @@ class BookLocationSerializer
         attributes: {
           destination: location,
           forecast: {
-            summary: weather.first.first.conditions,
-            temperature: weather.first.first.temperature
+            summary: weather[0].first.conditions,
+            temperature: weather[0].first.temperature
           }
         },
       total_books_found: books[1], 
