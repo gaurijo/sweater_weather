@@ -10,6 +10,7 @@ RSpec.describe "User Request" do
   post "/api/v1/users", headers: headers, params: JSON.generate(result)
   
   expect(response).to be_successful
+  expect(response.status).to eq(201)
 
   # result = JSON.parse(response.body, symbolize_names: true)
   # require 'pry'; binding.pry 
