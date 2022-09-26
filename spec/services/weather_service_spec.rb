@@ -13,7 +13,7 @@ RSpec.describe WeatherService do
     expect(response[:current][:temp]).to be_a(Float)
     expect(response[:current][:feels_like]).to be_a(Float)
     expect(response[:current][:humidity]).to be_a(Integer)
-    expect(response[:current][:uvi]).to be_a(Float)
+    expect(response[:current][:uvi]).to_not be_a(String) #this can be either float or integer depending on current data so asserting what NOT to expect
     expect(response[:current][:weather]).to be_a(Array)
     expect(response[:current][:weather][0][:description]).to be_a(String)
     expect(response[:current][:weather][0][:icon]).to be_a(String)
