@@ -8,7 +8,7 @@ class BookFacade
     json[:docs].first(quantity.to_i).map do |book| 
       books << Book.new(book)
     end
-    # return books, total_books 
+    return books, total_books
     # require 'pry'; binding.pry 
   end
 end
