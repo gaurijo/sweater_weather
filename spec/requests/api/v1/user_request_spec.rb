@@ -12,9 +12,10 @@ RSpec.describe "User Request" do
   headers = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
 
   post "/api/v1/users", headers: headers, params: JSON.generate(data)
-
+  
   expect(response).to be_successful
 
-  
+  result = JSON.parse(response.body, symbolize_names: true)
+  require 'pry'; binding.pry 
   end
 end
