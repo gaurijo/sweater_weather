@@ -1,10 +1,12 @@
 class WeatherSerializer
-##break into 3 different weather poros/serializers cuz too much data for one
   def initialize(weather_type)
+
     @weather = weather_type.first.first
     @daily_weather = weather_type.second 
-    @hourly_weather = weather_type.third
+    @hourly_weather = weather_type.last
+
   end
+
   def response
 {
   "data": {
