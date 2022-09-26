@@ -16,6 +16,6 @@ RSpec.describe "User Request" do
   expect(response).to be_successful
 
   result = JSON.parse(response.body, symbolize_names: true)
-  require 'pry'; binding.pry 
+  # require 'pry'; binding.pry 
   end
 end
