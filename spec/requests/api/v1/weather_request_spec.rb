@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Weather Request" do 
-  describe "happy path" do 
+  describe "only data requested by front end" do 
     it "sends data for weather forecast for a particular city", :vcr do 
 
       get "/api/v1/forecast?location=denver,co"
@@ -43,7 +43,7 @@ RSpec.describe "Weather Request" do
     end 
   end
 
-  describe "sad path" do 
+  describe "data that should not be included" do 
     it "does not send data that has not been requested by the hypothetical front end", :vcr do 
       
       get "/api/v1/forecast?location=denver,co"
