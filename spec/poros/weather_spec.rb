@@ -21,7 +21,7 @@ RSpec.describe Weather do
         }
 
     weather = Weather.new(data)
-
+    
   expect(weather).to be_a(Weather)
   expect(weather.datetime).to eq("2022-09-24 21:31:19.000000000 -0700")
   expect(weather.sunrise).to eq("2022-09-24 05:49:26.000000000 -0700")

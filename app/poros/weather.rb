@@ -21,5 +21,6 @@ class Weather
     @visibility = data[:visibility]
     @conditions = data[:weather].first[:description]
     @icon = data[:weather].first[:icon]
+    # require 'pry'; binding.pry 
   end
 end

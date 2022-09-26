@@ -1,7 +1,7 @@
     require 'rails_helper'
 
     RSpec.describe WeatherFacade do 
-      it 'returns a nested array of current weather data, 5 day weather forecast, and 8 hour forecast' do 
+      xit 'returns a nested array of current weather data, 5 day weather forecast, and 8 hour forecast' do 
         weather = WeatherFacade.get_weather(39.73, -104.98)
         # require 'pry'; binding.pry 
         expect(weather).to be_a(Array)
