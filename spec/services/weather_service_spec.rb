@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe WeatherService do 
-  it "makes a api call and returns current weather given a lat and long params" do
+  it "makes a api call and returns current weather given a lat and long params", :vcr do
     
     response = WeatherService.get_forecast(39.73, -104.98)
     # require 'pry'; binding.pry 
@@ -13,13 +13,13 @@ RSpec.describe WeatherService do
     expect(response[:current][:temp]).to be_a(Float)
     expect(response[:current][:feels_like]).to be_a(Float)
     expect(response[:current][:humidity]).to be_a(Integer)
-    expect(response[:current][:uvi]).to be_a(Integer)
+    expect(response[:current][:uvi]).to be_a(Float)
     expect(response[:current][:weather]).to be_a(Array)
     expect(response[:current][:weather][0][:description]).to be_a(String)
     expect(response[:current][:weather][0][:icon]).to be_a(String)
   end
 
-  it "makes an api call and returns a 5 day forecast given a lat and long params" do 
+  it "makes an api call and returns a 5 day forecast given a lat and long params", :vcr do 
     response = WeatherService.get_forecast(39.73, -104.98)
     # require 'pry'; binding.pry 
     expect(response).to have_key(:daily)
@@ -30,7 +30,7 @@ RSpec.describe WeatherService do
     expect(response[:daily][0][:temp][:min]).to be_a(Float)
   end
 
-  it "makes an api call and returns 8 hour forecast given a lat and long params" do
+  it "makes an api call and returns 8 hour forecast given a lat and long params", :vcr do
     response = WeatherService.get_forecast(39.73, -104.98)
     # require 'pry'; binding.pry 
     expect(response).to have_key(:hourly)

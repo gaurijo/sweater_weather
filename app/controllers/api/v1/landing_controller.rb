@@ -5,5 +5,6 @@ class Api::V1::LandingController < ApplicationController
     weather = WeatherFacade.get_weather(loc.first, loc.last)
     
     render json: WeatherSerializer.new(weather).response #status: :created?
+    # require 'pry'; binding.pry 
   end
 end
