@@ -25,4 +25,20 @@ RSpec.describe "User Request" do
   expect(result[:data][:attributes][:email]).to be_a(String)
   expect(result[:data][:attributes][:api_key]).to be_a(String)
   end
+
+  it "renders error message for bad credentials" do 
+    data = {
+      "email": "gauri@test.com",
+      "password": "password",
+      "password_confirmation": "notcorrectpassword"
+    }
+
+    headers = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+
+    post "/api/v1/users", headers: headers, params: JSON.generate(data)
+
+    expect(response).to_not be_successful
+    expect(response.body).to eq("{\"errors\":\"Email or password incorrect\"}")
+    expect(response.status).to eq(400)
+  end
 end
