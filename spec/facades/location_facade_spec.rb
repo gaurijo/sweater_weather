@@ -1,7 +1,7 @@
     require 'rails_helper'
 
     RSpec.describe LocationFacade do 
-      it 'returns lat/long coordinates based on search param of city,state' do 
+      it 'returns lat/long coordinates based on search param of city,state', :vcr do 
 
         search = "south plainfield, nj"
         location = LocationFacade.find_location(search)
@@ -13,7 +13,7 @@
         expect(location.last).to eq(-74.415544)
       end
       
-      it "returns the closest matching result based on search" do 
+      it "returns the closest matching result based on search", :vcr do 
         
         search = "adfsdj"
         location = LocationFacade.find_location(search)
