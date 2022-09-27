@@ -10,6 +10,8 @@ RSpec.describe RoadtripFacade do
     expect(destination_hash[:route]).to have_key(:formattedTime)
     expect(destination_hash[:route]).to have_key(:realTime)
     expect(destination_hash[:route]).to have_key(:legs)
+    expect(destination_hash[:route]).to have_key(:boundingBox)
+    expect(destination_hash[:route][:boundingBox]).to be_a(Hash)
   end
 end
 

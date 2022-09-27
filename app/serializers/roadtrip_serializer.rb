@@ -1,19 +1,21 @@
-# class RoadtripSerializer
-#   def self.get_destination(loc, weather)
-#     {
-#   "data": {
-#     "id": nil,
-#     "type": "roadtrip",
-#     "attributes": {
-#       "start_city": "Denver, CO",
-#       "end_city": "Estes Park, CO",
-#       "travel_time": "2 hours, 13 minutes"
-#       "weather_at_eta": {
-#         "temperature": weather.first.first.temperature,
-#         # "conditions": weather.conditions
-#       }
-#     }
-#   }
-# }
-#   end
-# end
+class RoadtripSerializer
+  def self.get_destination(from, to)
+  roadtrip = RoadtripFacade.find_roadtrip(from, to)
+
+  {
+    "data": {
+      "id": nil,
+      "type": "roadtrip",
+      "attributes": {
+            "start_city": from,
+            "end_city": to,
+            "travel_time": roadtrip.travelhours,
+            "weather_at_eta": {
+              "temperature": roadtrip.weather_at_eta,
+              "conditions": roadtrip.conditions_at_eta
+        }
+      }
+    }
+  }
+  end
+end
