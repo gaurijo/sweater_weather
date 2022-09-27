@@ -40,5 +40,7 @@ RSpec.describe "User Request" do
     expect(response).to_not be_successful
     expect(response.body).to eq("{\"errors\":\"Email or password incorrect\"}")
     expect(response.status).to eq(400)
+
+    # require 'pry'; binding.pry 
   end
 end

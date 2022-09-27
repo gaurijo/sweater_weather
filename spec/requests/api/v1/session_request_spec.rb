@@ -24,4 +24,17 @@ RSpec.describe "Session Request" do
     expect(result[:data][:attributes][:email]).to be_a(String)
     expect(result[:data][:attributes][:api_key]).to be_a(String)
   end
+
+  # it "renders an error response if session credentials are bad" do 
+  #     data = {
+  #       "email": "gauri@test.com",
+  #       "password": "password",
+  #       "password_confirmation": "notcorrectpassword"
+  #     }
+  #   header = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
+
+  #   post "/api/v1/sessions", headers: headers, params: JSON.generate(data)
+  #   # require 'pry'; binding.pry 
+  #   expect(response).to_not be_successful
+  # end
 end
