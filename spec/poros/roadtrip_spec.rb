@@ -16,6 +16,7 @@ RSpec.describe Roadtrip do
   end
 
   it "renders an error if the route is impossible", :vcr do 
+
     origin = "Denver, CO"
     destination = "London, UK"
     weather = WeatherFacade.get_weather(51.50015, -0.12624)

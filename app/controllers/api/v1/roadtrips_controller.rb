@@ -7,7 +7,7 @@ class Api::V1::RoadtripsController < ApplicationController
     roadtrip = RoadtripFacade.find_roadtrip(from, to)
 
     if roadtrip.traveltime.nil?
-      render json: { error: "Impossible Route"}
+      render json: { error: "Impossible Route"}, status: 400
     else
     render json: RoadtripSerializer.get_destination(from, to)
     end
