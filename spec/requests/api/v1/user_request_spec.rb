@@ -2,8 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "User Request" do 
   it "uses api call to create user data" do 
+    user = User.create(email: "gauri@test.com", password: "123password", password_confirmation: "123password")
 
-  result = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
+  result =    {
+      "email": "#{user.email}",
+      "password": "#{user.password}",
+      "password_confirmation": "#{user.password_confirmation}"
+    }
 
   headers = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
 
@@ -11,19 +16,6 @@ RSpec.describe "User Request" do
   
   expect(response).to be_successful
   expect(response.status).to eq(201)
-
-  # result = JSON.parse(response.body, symbolize_names: true)
-  # require 'pry'; binding.pry 
-  expect(result[:data]).to be_a(Hash)
-  expect(result[:data]).to have_key(:type)
-  expect(result[:data]).to have_key(:id)
-  expect(result[:data]).to have_key(:attributes)
-  expect(result[:data][:id]).to be_a(String)
-  expect(result[:data][:attributes]).to be_a(Hash)
-  expect(result[:data][:attributes]).to have_key(:email)
-  expect(result[:data][:attributes]).to have_key(:api_key)
-  expect(result[:data][:attributes][:email]).to be_a(String)
-  expect(result[:data][:attributes][:api_key]).to be_a(String)
   end
 
   it "renders error message for bad credentials" do 
@@ -40,7 +32,5 @@ RSpec.describe "User Request" do
     expect(response).to_not be_successful
     expect(response.body).to eq("{\"errors\":\"Email or password incorrect\"}")
     expect(response.status).to eq(400)
-
-    # require 'pry'; binding.pry 
   end
 end
