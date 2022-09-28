@@ -1,6 +1,20 @@
 class RoadtripSerializer
   def self.get_destination(from, to)
   roadtrip = RoadtripFacade.find_roadtrip(from, to)
+  
+    if roadtrip.traveltime.nil?
+      {
+      "data": {
+        "id": nil,
+        "type": "roadtrip",
+        "attributes": {
+              "start_city": from,
+              "end_city": to,
+              "travel_time": roadtrip.bad_route,
+          }
+        }
+      }
+    else
 
   {
     "data": {
@@ -17,5 +31,6 @@ class RoadtripSerializer
       }
     }
   }
+    end
   end
 end

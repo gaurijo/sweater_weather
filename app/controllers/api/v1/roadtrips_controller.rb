@@ -6,8 +6,10 @@ class Api::V1::RoadtripsController < ApplicationController
 
     roadtrip = RoadtripFacade.find_roadtrip(from, to)
 
-
+    if roadtrip.traveltime.nil?
+      render json: { error: "Impossible Route"}
+    else
     render json: RoadtripSerializer.get_destination(from, to)
-    # require 'pry'; binding.pry 
+    end
   end
 end
