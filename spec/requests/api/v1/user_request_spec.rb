@@ -4,7 +4,11 @@ RSpec.describe "User Request" do
   it "uses api call to create user data" do 
 
   result = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
-
+  # result =    {
+  #     "email": "gauri@test.com",
+  #     "password": "password",
+  #     "password_confirmation": "password"
+  #   }
   headers = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
 
   post "/api/v1/users", headers: headers, params: JSON.generate(result)

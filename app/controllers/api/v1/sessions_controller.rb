@@ -6,7 +6,7 @@ class Api::V1::SessionsController < ApplicationController
       session[:user_id] = user.id 
       render json: UserSerializer.user_data(user), status: 200
     else
-      # params[:auth_token].nil? || params[:password] != params[:password_confirmation]
+      params[:auth_token].nil? || params[:password] != params[:password_confirmation]
         render json: { errors: "Email or password incorrect" }, status: 400
     end
     # require 'pry'; binding.pry 

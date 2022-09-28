@@ -13,4 +13,5 @@ class UserSerializer
       }
     }
   end
+  # require 'pry'; binding.pry 
 end

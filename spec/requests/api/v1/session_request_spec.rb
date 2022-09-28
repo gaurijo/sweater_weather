@@ -4,6 +4,12 @@ RSpec.describe "Session Request" do
   it "uses api call to create a login session for a user" do 
 
     result = JSON.parse(File.read('spec/fixtures/user.json'), symbolize_names: true)
+    
+    # result = {
+    #   "email": "bob@email.com",
+    #   "password": "password",
+    #   "password_confirmation": "password"
+    # }
 
     header = { "CONTENT_TYPE" => "application/json", "Accept" => "application/json"}
 
