@@ -42,4 +42,5 @@ Your team is working in a service-oriented architecture. The front-end will comm
 - run `$ bundle install `
 - run `$ bundle exec figaro install` 
 - add a [OpenWeather API key](https://openweathermap.org/api) and [MapQuest API key](https://developer.mapquest.com/) to your `application.yml `
-- run `$ bundle exec rspec` for test coverage
+- run `$ bundle exec rspec` to run test suite 
+- run `$ open coverage/index.html` to view SimpleCov coverage (99%)
